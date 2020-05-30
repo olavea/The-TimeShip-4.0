@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useLayoutEffect } from "react";
 import { navigate } from "gatsby";
 import userbase from "userbase-js";
+import Stripe from "stripe";
 
 import TodoItem from "./TodoItem";
 
