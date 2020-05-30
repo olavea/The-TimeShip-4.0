@@ -12,12 +12,12 @@ const Signup = ({ user, setUser }) => {
     }
   }, [user]);
 
-  const handleSubmitSignUp = async (event) => {
+  const handleTimeShipSignUp = async (event) => {
     event.preventDefault();
 
     const username = event.target.elements.usernameInput.value;
     const email = event.target.elements.emailInput.value;
-    const password = event.target.elements.passwordInput.value;
+    const password = event.target.elements.pasSwordInput.value;
 
     try {
       console.log("Sign up");
@@ -38,9 +38,9 @@ const Signup = ({ user, setUser }) => {
 
   return (
     <>
-      <h1>Ugliest App / Signup</h1>
+      <h1>The TimeShip Sign Up 🏹 </h1>
 
-      <form onSubmit={handleSubmitSignUp}>
+      <form onSubmit={handleTimeShipSignUp}>
         <label>
           Username: <br />
           <input type="text" id="usernameInput" name="username" required />
@@ -59,7 +59,7 @@ const Signup = ({ user, setUser }) => {
 
         <label>
           Password: <br />
-          <input type="password" id="passwordInput" name="password" required />
+          <input type="password" id="pasSwordInput" name="password" required />
         </label>
 
         <br />

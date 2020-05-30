@@ -7,7 +7,7 @@ import Default from "../components/TodoList";
 import Login from "../components/Login";
 import Signup from "../components/Signup";
 
-const App = () => {
+const TimeShip = () => {
   const [user, setUser] = useState(false);
   const [error, setError] = useState(false);
   const [status, setStatus] = useState("initializing");
@@ -60,7 +60,7 @@ const App = () => {
   if (status === "initializing") {
     return (
       <>
-        <h1>Ugliest App</h1>
+        <h1>The TimeShip</h1>
         <p>Loading...</p>
       </>
     );
@@ -69,7 +69,7 @@ const App = () => {
   if (error) {
     return (
       <>
-        <h1>Ugliest App / Error</h1>
+        <h1>TimeShip / Error</h1>
         <p>{error.message}</p>
       </>
     );
@@ -96,11 +96,11 @@ const App = () => {
       <hr />
       <p>
         <small>
-          <Link to="/">Back to website</Link>
+          <Link to="/">Back to London Bridge</Link>
         </small>
       </p>
     </>
   );
 };
 
-export default App;
+export default TimeShip;

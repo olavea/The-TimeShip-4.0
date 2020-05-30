@@ -3,8 +3,8 @@ import { Link } from "gatsby";
 
 const IndexPage = () => (
   <>
-    <h1>Ugliest App</h1>
-    <p>You simply must try this magnificent ugly todo app!</p>
+    <h1>The TimeShip</h1>
+    <p>Take a trip in time</p>
     <p>
       Its an example to show how to use{" "}
       <a href="https://userbase.com/">Userbase</a> with{" "}
@@ -12,7 +12,7 @@ const IndexPage = () => (
     </p>
     <p>
       Created by <a href="https://twitter.com/raae">@raae</a> for Gatsby Virtual
-      Days 2020.
+      Days 2020. Mod. by @olaholstvea
     </p>
     <hr />
     <p>
