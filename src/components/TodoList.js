@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useLayoutEffect } from "react";
 import { navigate } from "gatsby";
 import userbase from "userbase-js";
-import Stripe from "stripe";
+import { loadStripe } from "@stripe/stripe-js";
 
 import TodoItem from "./TodoItem";
 
@@ -9,6 +9,9 @@ const TodoList = ({ user }) => {
   const [todos, setTodos] = useState([]);
   const [error, setError] = useState(false);
   const [status, setStatus] = useState("initializing");
+
+  const successUrl = "http://localhost:8000/app";
+  const cancelUrl = "http://localhost:8000/app";
 
   useLayoutEffect(() => {
     if (user) {
@@ -49,7 +52,8 @@ const TodoList = ({ user }) => {
       }
     };
 
-    if (user) {
+    if (!user.subscriptionStatus) {
+      userbase.purchaseSubscription({ successUrl, cancelUrl });
       initTodos();
     } else {
       setTodos([]);
