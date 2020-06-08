@@ -29,17 +29,26 @@ const Signup = ({ user, setUser }) => {
       console.log("Sign up succeeded", user.username);
       setUser(user);
       setStatus("idle");
+      goToYear(user);
     } catch (error) {
       console.log("Sign up failed", error);
       setError(error);
       setStatus("idle");
     }
   };
+  function goToYear(user) {
+    const successUrl = "https://github.com/lillylabs/2026/issues/2";
+    const cancelUrl = "http://localhost:8000/";
+    if (!user.subscriptionStatus) {
+      userbase.purchaseSubscription({ successUrl, cancelUrl });
+      return;
+    }
+  }
 
   return (
     <>
-      <h1>The TimeShip Sign Up 🏹 </h1>
-
+      <h3>Go to 2026 on:</h3>
+      <h1>Ruby's TimeShip ⛵</h1>
       <form onSubmit={handleTimeShipSignUp}>
         <label>
           Username: <br />
